@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Portfolio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f0f4f8;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .photo-item {
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+            .photo-item:hover {
+                transform: scale(1.05);
+            }
+
+        .photo-img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-body img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="photography.html">Photography</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h1 class="mb-4">Photography Gallery</h1>
+        <div class="row">
+            <!-- Photo Items -->
+            <!-- Example images with hover and click-to-expand -->
+            <div class="col-md-4">
+                <div class="photo-item" data-toggle="modal" data-target="#photoModal" data-src="C:/Users/Ryan/Desktop/Portfolio Web Page/Jake & Chelsea.png">
+                    <img src="C:/Users/Ryan/Desktop/Portfolio Web Page/Jake & Chelsea.png" alt="Jake & Chelsea" class="photo-img">
+                </div>
+                <div class="photo-item" data-toggle="modal" data-target="#photoModal" data-src="C:/Users/Ryan/Desktop/Portfolio Web Page/UTCourthouse.png">
+                    <img src="C:/Users/Ryan/Desktop/Portfolio Web Page/UTCourthouse.png" alt="UTCourthouse" class="photo-img">
+                </div>
+                <div class="photo-item" data-toggle="modal" data-target="#photoModal" data-src="C:/Users/Ryan/Desktop/Portfolio Web Page/Mountain & Trees.png">
+                    <img src="C:/Users/Ryan/Desktop/Portfolio Web Page/Mountain & Trees.png" alt="Mountain & Trees" class="photo-img">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="photo-item" data-toggle="modal" data-target="#photoModal" data-src="C:/Users/Ryan/Desktop/Portfolio Web Page/Hot Chick.jpg">
+                    <img src="C:/Users/Ryan/Desktop/Portfolio Web Page/Hot Chick.jpg" alt="Hot Chick" class="photo-img">
+                </div>
+                <div class="photo-item" data-toggle="modal" data-target="#photoModal" data-src="C:/Users/Ryan/Desktop/Portfolio Web Page/Dad.jpg">
+                    <img src="C:/Users/Ryan/Desktop/Portfolio Web Page/Dad.jpg" alt="Dad" class="photo-img">
+                </div>
+                <div class="photo-item" data-toggle="modal" data-target="#photoModal" data-src="C:/Users/Ryan/Desktop/Portfolio Web Page/Kauai.jpg">
+                    <img src="C:/Users/Ryan/Desktop/Portfolio Web Page/Kauai.jpg" alt="Kauai" class="photo-img">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="photo-item" data-toggle="modal" data-target="#photoModal" data-src="C:/Users/Ryan/Desktop/Portfolio Web Page/Refinery.jpg">
+                    <img src="C:/Users/Ryan/Desktop/Portfolio Web Page/Refinery.jpg" alt="Refinery" class="photo-img">
+                </div>
+                <div class="photo-item" data-toggle="modal" data-target="#photoModal" data-src="C:/Users/Ryan/Desktop/Portfolio Web Page/Zey Portrait.png">
+                    <img src="C:/Users/Ryan/Desktop/Portfolio Web Page/Zey Portrait.png" alt="Zey Portrait" class="photo-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for full-screen photo -->
+    <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="" alt="Expanded Photo" id="modalImage">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; R-Photography. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Script to load image in modal
+        $('#photoModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var imageUrl = button.data('src'); // Extract image URL from data-src attribute
+            var modal = $(this);
+            modal.find('#modalImage').attr('src', imageUrl); // Update the src of the image in the modal
+        });
+    </script>
+</body>
+
+</html>
