@@ -10,16 +10,33 @@
 
     <style>
         body {
-            background: #333333;
+            background: linear-gradient(135deg, #333333, #555555);
+           /* background: image src C:\Users\Ryan\Portfolio\Images\Background.jpg)    no-repeat center center fixed; */
+            background-size: cover;
             color: #fff;
             font-family: 'Sofia', serif;
             margin: 5;
             padding: 0;
+}
+
+        /* Fade-in and slide-up effect */
+        @keyframes fadeInMove {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
 
         .photo-item {
             margin-bottom: 30px;
             position: relative;
+            animation: fadeInMove 1s ease forwards;
+            opacity: 0; /* Initially hidden */
         }
 
         .photo-img {
@@ -126,7 +143,7 @@
                 </div>
 
                 <div class="photo-item">
-                    <img src="Images/masterofdoors.jpg" alt="Door" class="photo-img" onclick="openModal(this)">
+                    <img src="Images/masterofdoors.png" alt="Door" class="photo-img" onclick="openModal(this)">
                 </div>
                 
                 <div class="photo-item">
@@ -159,9 +176,6 @@
                     <img src="Images/Tiger.png" alt="Tiger" class="photo-img" onclick="openModal(this)">
                 </div>
                 <div class="photo-item">
-                    <img src="Images/Zey Portrait.png" alt="Zey Portrait" class="photo-img" onclick="openModal(this)">
-                </div>
-                <div class="photo-item">
                     <img src="Images/DadWalking.jpg" alt="Beach Walk" class="photo-img" onclick="openModal(this)">
                 </div>
                 <div class="photo-item">
@@ -175,6 +189,9 @@
                 </div>
                 <div class="photo-item">
                     <img src="Images/Sean.png" alt="Sean" class="photo-img" onclick="openModal(this)">
+                </div>
+                <div class="photo-item">
+                    <img src="Images/Zey Portrait.png" alt="Zey Portrait" class="photo-img" onclick="openModal(this)">
                 </div>
             </div>
             <div class="col-md-4">
